@@ -1,0 +1,392 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+}
+
+/* header */
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: cornflowerblue;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.06);
+    width: 100%;
+    height: 10vh;
+    z-index: 999;
+    position: sticky;
+    top: 0;
+}
+
+#logo-header {
+    /* margin-left: 20px; */
+    padding-left: 20px;
+}
+
+#logo-header a {
+    text-decoration: none;
+}
+
+#logo-header span {
+    font-size: 20px;
+    font-weight: 800;
+    color: rgba(26, 25, 25);
+}
+
+i {
+    color: rgba(26, 25, 25, 0.8);
+}
+
+#navbar {
+    display: flex;
+    flex-direction: row;
+}
+
+#navbar li {
+    list-style: none;
+    text-align: center;
+    /* margin: 0 1em; */
+    padding: 0 1em;
+}
+
+#navbar li a {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+}
+
+#navbar li a:hover span,
+#navbar li a:hover i {
+    color: white;
+}
+
+#navbar li a span {
+    font-size: 0.5em;
+    margin-top: 0.2em;
+    color: rgba(26, 25, 25, 0.8);
+}
+
+/* footer */
+footer {
+    padding: 20px 20px;
+    background-color: black;
+}
+
+body > footer {
+    position: sticky;
+    top: 100vh;
+  }
+
+#logo-footer {
+    margin-bottom: 1em;
+}
+
+#content-footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+footer h4,
+footer a {
+    color: white;
+}
+
+footer h4 {
+    text-decoration: underline;
+    text-decoration-color: white;
+    margin-bottom: 5px;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer li {
+    list-style: none;
+}
+
+footer .col {
+    padding: 8px 16px;
+}
+
+/* index.html */
+#top-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url("../image/home-image.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 55%;
+    background-size: cover;
+    /* Photo by <a href="https://unsplash.com/@joshuaryanphoto?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Joshua Reddekopp</a> on <a href="https://unsplash.com/s/photos/fashion?orientation=landscape&utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */
+  
+    width: 100%;
+    height: 40vh;
+}
+
+#top-image h1,
+#top-image p {
+    color: white;
+}
+
+#shop-now {
+    width: 100px;
+}
+
+#featured {
+    margin-top: 2em;
+    text-align: center;
+}
+
+#featured .featured-container {
+    width: 95%;
+    margin: 0 auto;
+    border: 1px solid rgb(0, 0, 0, 0.1);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+}
+
+#featured .product {
+    width: 25%;
+    min-width: 250px;
+    padding: 10px 12px;
+    margin: 15px 15px;
+    border: 1px solid #cce7d0;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+    transition: 0.2s ease;
+    position: relative;
+}
+
+#featured .product:hover {
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.1);
+}
+
+#featured .description {
+    text-align: start;
+}
+
+#featured .heart {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50px;
+    background-color: #e8f6ea;
+    font-weight: 500px;
+    color: #088178;
+    border: 1px solid #cce7d0;
+    position: absolute;
+    bottom: 15px;
+    right: 10px;
+}
+
+#featured .product img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+#store-info {
+    margin-top: 4em;
+    margin-bottom: 4em;
+}
+
+#store-info img {
+    width :100%;
+}
+
+#store-info .store-address {
+    margin: auto;
+    text-align: center;
+}
+
+/* products */
+    /* Photo by <a href="https://unsplash.com/@austin_wade?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Austin Wade</a> on <a href="https://unsplash.com/s/photos/fashion-men?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */
+    /* Photo by <a href="https://unsplash.com/@mahdibafande?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Mahdi Bafande</a> on <a href="https://unsplash.com/s/photos/fashion-men?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */
+    /* Photo by <a href="https://unsplash.com/fr/@mohamadkhosravi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Mohamad Khosravi</a> on <a href="https://unsplash.com/s/photos/fashion-men?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */
+    /* Photo by <a href="https://unsplash.com/@chernus_tr?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Taras Chernus</a> on <a href="https://unsplash.com/s/photos/fashion-men?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */
+    /* Photo by <a href="https://unsplash.com/@nixcreative?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Tyler Nix</a> on <a href="https://unsplash.com/s/photos/fashion-men?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */
+    /* Photo by <a href="https://unsplash.com/@ulrichderboven?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ulrich Derboven</a> on <a href="https://unsplash.com/s/photos/fashion-men?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */
+  
+/* store */
+    /* Photo by <a href="https://unsplash.com/@mercantile?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Clark Street Mercantile</a> on <a href="https://unsplash.com/s/photos/store?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */
+    /* Photo by <a href="https://unsplash.com/@nxvision?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nigel Tadyanehondo</a> on <a href="https://unsplash.com/s/photos/store?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */
+  
+/* image2,3 */
+    /* Photo by <a href="https://unsplash.com/@sebastianpoc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sebastian Pociecha</a> on <a href="https://unsplash.com/s/photos/fashion-man?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */
+    /* Photo by <a href="https://unsplash.com/@hustwilson?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Huston Wilson</a> on <a href="https://unsplash.com/s/photos/fashion-man?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */
+  
+  
+
+/* shop.html */
+#pagination {
+    text-align: center;
+    margin: 2em auto;
+}
+
+#pagination a {
+    text-decoration: none;
+    font-weight: 600;
+    color: white;
+    background-color: black;
+    padding: 15px 20px;
+    margin: 0 0.2em;
+}
+
+#pagination i {
+    font-size: 1em;
+    color: white;
+} 
+
+#shop-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* product.html */
+#single-product .images {
+    margin: 1em auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 95%;
+}
+
+#single-product .product-details {
+    margin: 1em;
+}
+
+#single-product .product-details p {
+    line-height: 2em;
+}
+
+#single-product .regular-image {
+    width:75%;
+}
+
+#single-product .small-image img,
+#single-product .regular-image img {
+    width: 100%;
+}
+
+#single-product .small-image-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24%;
+}
+
+/* tablet size */
+@media screen and (min-width:768px) {
+    /* index.html */
+    #top-image {
+        height: 90vh;
+    }
+    #store-info {
+        display: flex;
+        flex-direction: row;
+    }
+    #store-info img {
+        width: 55%;
+    }
+    #store-info .store-address {
+        width: 45%;
+    }
+    /* shop.html */
+    #single-product {
+        margin: 2em auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 95%;
+    }
+    #single-product .product-details {
+        margin: 1em auto;
+        padding: 1em;
+    }
+}
+
+/*  */
+
+#cart-container table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    white-space: nowrap;
+}
+
+#cart-container table img {
+    width: 70px;
+}
+
+#cart-container table td:nth-child(1) {
+    width: 100px;
+    text-align: center;
+}
+
+#cart-container table td:nth-child(2) {
+    width: 100px;
+    text-align: center;
+}
+
+#cart-container table td:nth-child(3) {
+    width: 100px;
+    text-align: center;
+}
+
+#cart-container table td:nth-child(4) {
+    width: 100px;
+    text-align: center;
+}
+
+#cart-container table td:nth-child(5) {
+    width: 100px;
+    text-align: center;
+}
+
+#cart-container table td:nth-child(6) {
+    width: 100px;
+    text-align: center;
+}
+
+#cart-container table td:nth-child(7) {
+    width: 100px;
+    text-align: center;
+}
+
+#cart-container table td:nth-child(6) input {
+    width: 70px;
+    text-align: center;
+    padding: 10px 5px 10px 15px;
+}
+
+#cart-container table thead {
+    border: 1px solid #e2e9e1;
+    border-left: none;
+    border-right: none;
+}
+
+#cart-container table thead td {
+    font-weight: 700;
+    font-size: 13px;
+    padding: 18px 0;
+}
+
+#cart-container table tbody tr td {
+    padding-top: 15px;
+}
+
+#cart-container table tbody td {
+    font-size: 13px;
+}
