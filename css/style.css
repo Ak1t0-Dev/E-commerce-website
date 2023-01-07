@@ -436,10 +436,6 @@ footer .col {
         padding: 0.5rem;
         width: 45%;
     }
-
-    #single-product .product {
-        /* font-size: 30%; */
-    }
 }
 
 /* cart.html */
@@ -510,11 +506,16 @@ footer .col {
     border-right: none;
 }
 
+#cart-container table thead tr {
+    height: 20vh;
+}
+
 #cart-container table thead th {
     font-weight: 700;
     font-size: 13px;
     padding: 18px 0;
 }
+
 
 #cart-container table tbody tr td {
     padding-top: 15px;

@@ -37,6 +37,15 @@ templateFooter.innerHTML = `
 </ul>
 
 <ul class="col">
+    <h4>More</h4>
+    <li><a href="#">Personalize Experience</a></li>
+    <li><a href="#">Find a Sotre</a></li>
+    <li><a href="#">Download the App</a></li>
+    <li><a href="#">Sitmap</a></li>
+    <li><a href="#">Mobile Marketing</a></li>
+</ul>
+
+<ul class="col">
     <h4>My Account</h4>
     <li><a href="#">Sign In</a></li>
     <li><a href="#">View Cart</a></li>
