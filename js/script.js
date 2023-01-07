@@ -6,11 +6,11 @@ templateHeader.innerHTML = `
 </div>
 <div>
     <ul id="navbar">
-        <li><a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
-        <li><a href="shop.html"><i class="fa-solid fa-shirt"></i><span>Shop</span></a></li>
-        <li><a href="blog.html"><i class="fa-solid fa-heart"></i><span>Like</span></a></li>
-        <li><a href="user.html"><i class="fa-solid fa-circle-user"></i><span>User</span></a></li>
-        <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i><span>Cart</span></a></li>
+        <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
+        <li><a href="shop.html"><i class="fa-solid fa-shirt"></i></a></li>
+        <li><a href="#"><i class="fa-solid fa-heart"></i></a></li>
+        <li><a href="#"><i class="fa-solid fa-circle-user"></i></a></li>
+        <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
     </ul>
 </div>
 `;
@@ -52,18 +52,13 @@ footer.appendChild(templateFooter.content);
 function addCart(id) {
     const select = document.querySelector('[name="size"]');
     if (select.value === "") {
-        // 処理記載
+        alert("please select size");
     } else {
         let sessionItem = sessionStorage.getItem(id);
-        let count = 1;
         if (sessionItem === null) {
-            // sessionStorage.setItem(id, count);
             createObj(id, select.value);
         } else {
             addObj(id, select.value);
-            // count = parseInt(sessionItem);
-            // count++;
-            // sessionStorage.setItem(id, count);
         }
     }
 }
@@ -78,13 +73,12 @@ function addObj(id, value) {
     let obj = sessionStorage.getItem(id);
     obj = JSON.parse(obj);
     if (obj.hasOwnProperty(value)) {
-        obj[value]= parseInt(obj[value]) + 1; 
+        obj[value] = parseInt(obj[value]) + 1;
     } else {
         obj[value] = 1;
     }
     sessionStorage.setItem(id, JSON.stringify(obj));
 }
-
 
 // data
 const data = [
@@ -104,7 +98,7 @@ const data = [
         name: "canadian brand",
         image: "image/products/product2.jpg",
         price: "500",
-        description: "aaaaaaaaaaaaa",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias a doloremque alias, sed maxime voluptate accusamus animi aspernatur labore placeat temporibus eaque numquam assumenda reiciendis eveniet officia delectus aperiam repellat",
         subImageOne: "image/products/subimage1.jpg",
         subImageTwo: "image/products/subimage2.jpg"
     },
@@ -114,7 +108,7 @@ const data = [
         name: "canadian brand",
         image: "image/products/product3.jpg",
         price: "500",
-        description: "aaaaaaaaaaaaa",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias a doloremque alias, sed maxime voluptate accusamus animi aspernatur labore placeat temporibus eaque numquam assumenda reiciendis eveniet officia delectus aperiam repellat",
         subImageOne: "image/products/subimage1.jpg",
         subImageTwo: "image/products/subimage2.jpg"
     },
@@ -124,7 +118,7 @@ const data = [
         name: "canadian brand",
         image: "image/products/product4.jpg",
         price: "500",
-        description: "aaaaaaaaaaaaa",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias a doloremque alias, sed maxime voluptate accusamus animi aspernatur labore placeat temporibus eaque numquam assumenda reiciendis eveniet officia delectus aperiam repellat",
         subImageOne: "image/products/subimage1.jpg",
         subImageTwo: "image/products/subimage2.jpg"
     },
@@ -134,7 +128,7 @@ const data = [
         name: "canadian brand",
         image: "image/products/product5.jpg",
         price: "500",
-        description: "aaaaaaaaaaaaa",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias a doloremque alias, sed maxime voluptate accusamus animi aspernatur labore placeat temporibus eaque numquam assumenda reiciendis eveniet officia delectus aperiam repellat",
         subImageOne: "image/products/subimage1.jpg",
         subImageTwo: "image/products/subimage2.jpg"
     },
@@ -144,23 +138,21 @@ const data = [
         name: "canadian brand",
         image: "image/products/product6.jpg",
         price: "500",
-        description: "aaaaaaaaaaaaa",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias a doloremque alias, sed maxime voluptate accusamus animi aspernatur labore placeat temporibus eaque numquam assumenda reiciendis eveniet officia delectus aperiam repellat",
         subImageOne: "image/products/subimage1.jpg",
         subImageTwo: "image/products/subimage2.jpg"
     }
 ];
 
 
-const clothSize = [
-    {
-        xs: "XS",
-        s: "S",
-        m: "M",
-        l: "L",
-        xl: "XL",
-        xxl: "XXL"
-    }
-]
+const clothSize = {
+    xs: "XS",
+    s: "S",
+    m: "M",
+    l: "L",
+    xl: "XL",
+    xxl: "XXL"
+}
 
 // shop.html
 const shopContainer = document.querySelector('#shop-container');
@@ -172,16 +164,24 @@ const html = data.map(obj => {
     <a id=${obj.id} href="product.html?id=${obj.id}">
     <img src=${obj.image} alt="feature cloth">
     <div class="description">
-        <span>${obj.brand}</span>
-        <h5>${obj.name}</h5>
+        <h5>${obj.brand}</h5>
+        <h3>${obj.name}</h3>
         <h4><span>$</span>${obj.price}</h4>
     </div>
-    <i class="fa-solid fa-heart heart"></i></a>
+    </a>
+    <i class="fa-solid fa-heart heart" onclick="changeColor();"></i>
     </div>
     `;
 }).join('');
 
 shopContainer.insertAdjacentHTML('beforeend', html);
+
+// change color of heart icon
+const heartIcon = document.querySelector(".heart");
+function changeColor() {
+    heartIcon.style.backgroundColor = "rgb(255,240,245,0.8)";
+    heartIcon.style.color = "#FFABCE";
+}
 
 // cart.html
 function showCart() {
@@ -190,7 +190,7 @@ function showCart() {
         const itemKey = sessionStorage.key(i);
         if (itemKey.match(/\d{3}/)) {
             const itemValue = JSON.parse(sessionStorage.getItem(itemKey));
-            for(const [key, value] of Object.entries(itemValue)) {
+            for (const [key, value] of Object.entries(itemValue)) {
                 const item = [];
                 item.push(itemKey, key, value);
                 products.push(item);
@@ -217,18 +217,23 @@ function createTable(products) {
         return `
         <tr>
           <td><i class="fa-solid fa-circle-xmark"></i></td>
-          <td>${obj.brand}</td>
           <td>${obj.name}</td>
-          <td>${obj.id}</td>
-          <td>${product[1]}</td>
+          <td><img src="${obj.image}"></td>
+          <td>${clothSize[product[1]]}</td>
+          <td><span>$</span>${obj.price}</td>
           <td><input type="number" value=${product[2]}></td>
-          <td>total</td>
+          <td><span>$</span>${calSubtotal(obj.price, product[2])}</td>
         </tr>
         `;
 
     }).join('');
 
     cartContainer.insertAdjacentHTML('beforeend', cart);
+}
+
+function calSubtotal(price, num) {
+    const subtotal = parseInt(price) * parseInt(num);
+    return subtotal;
 }
 
 // product.html
@@ -272,10 +277,14 @@ function createProduct(itemId) {
         </div>
         </div>
         <div class="product-details">
-        <h2>Men's Fashion Pale Pink Jacket</h2>
-        <p>${obj.description}</p>
+            <h5>${obj.brand}</h5>
+            <h3>${obj.name}</h3>
+        <div class="product-description">
+            <p>${obj.description}</p>
+        </div>
         <div class="price"><span>$</span>${obj.price}</div>
-        <select name="size">
+        <div class="select-decision">
+        <select name="size" class="cloth-size">
             <option value="">Select Size</option>
             <option value="xs">XS</option>
             <option value="s">S</option>
@@ -284,7 +293,8 @@ function createProduct(itemId) {
             <option value="xl">XL</option>
             <option value="xxl">XXL</option>
         </select>
-        <input type="button" id=${itemId} onclick="addCart(this.id);" value="Add To Cart">
+        <input type="button" id=${itemId} class="add-cart" onclick="addCart(this.id);" value="Add To Cart">
+        </div>
         </div>
 `
 }
