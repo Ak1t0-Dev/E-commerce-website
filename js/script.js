@@ -1,3 +1,14 @@
+const clothSize = {
+    xs: "XS",
+    s: "S",
+    m: "M",
+    l: "L",
+    xl: "XL",
+    xxl: "XXL"
+}
+
+// ----------------------------------------------------------------------------------------------------------------------------------
+// header
 const templateHeader = document.createElement('template');
 const header = document.querySelector('#temp-header');
 templateHeader.innerHTML = `
@@ -8,7 +19,7 @@ templateHeader.innerHTML = `
     <ul id="navbar">
         <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
         <li><a href="shop.html"><i class="fa-solid fa-shirt"></i></a></li>
-        <li><a href="#"><i class="fa-solid fa-heart"></i></a></li>
+        <li><a href="like.html"><i class="fa-solid fa-heart"></i></a></li>
         <li><a href="#"><i class="fa-solid fa-circle-user"></i></a></li>
         <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
     </ul>
@@ -57,6 +68,7 @@ templateFooter.innerHTML = `
 
 footer.appendChild(templateFooter.content);
 
+// ----------------------------------------------------------------------------------------------------------------------------------
 // add product information in session
 function addCart(id) {
     const select = document.querySelector('[name="size"]');
@@ -89,84 +101,11 @@ function addObj(id, value) {
     sessionStorage.setItem(id, JSON.stringify(obj));
 }
 
-// data
-const data = [
-    {
-        id: "001",
-        brand: "canadian brand",
-        name: "pale pink jacket",
-        image: "image/products/product1.jpg",
-        price: "500",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias a doloremque alias, sed maxime voluptate accusamus animi aspernatur labore placeat temporibus eaque numquam assumenda reiciendis eveniet officia delectus aperiam repellat",
-        subImageOne: "image/products/subimage1.jpg",
-        subImageTwo: "image/products/subimage2.jpg"
-    },
-    {
-        id: "002",
-        brand: "canadian brand",
-        name: "canadian brand",
-        image: "image/products/product2.jpg",
-        price: "500",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias a doloremque alias, sed maxime voluptate accusamus animi aspernatur labore placeat temporibus eaque numquam assumenda reiciendis eveniet officia delectus aperiam repellat",
-        subImageOne: "image/products/subimage1.jpg",
-        subImageTwo: "image/products/subimage2.jpg"
-    },
-    {
-        id: "003",
-        brand: "canadian brand",
-        name: "canadian brand",
-        image: "image/products/product3.jpg",
-        price: "500",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias a doloremque alias, sed maxime voluptate accusamus animi aspernatur labore placeat temporibus eaque numquam assumenda reiciendis eveniet officia delectus aperiam repellat",
-        subImageOne: "image/products/subimage1.jpg",
-        subImageTwo: "image/products/subimage2.jpg"
-    },
-    {
-        id: "004",
-        brand: "canadian brand",
-        name: "canadian brand",
-        image: "image/products/product4.jpg",
-        price: "500",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias a doloremque alias, sed maxime voluptate accusamus animi aspernatur labore placeat temporibus eaque numquam assumenda reiciendis eveniet officia delectus aperiam repellat",
-        subImageOne: "image/products/subimage1.jpg",
-        subImageTwo: "image/products/subimage2.jpg"
-    },
-    {
-        id: "005",
-        brand: "canadian brand",
-        name: "canadian brand",
-        image: "image/products/product5.jpg",
-        price: "500",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias a doloremque alias, sed maxime voluptate accusamus animi aspernatur labore placeat temporibus eaque numquam assumenda reiciendis eveniet officia delectus aperiam repellat",
-        subImageOne: "image/products/subimage1.jpg",
-        subImageTwo: "image/products/subimage2.jpg"
-    },
-    {
-        id: "006",
-        brand: "canadian brand",
-        name: "canadian brand",
-        image: "image/products/product6.jpg",
-        price: "500",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias a doloremque alias, sed maxime voluptate accusamus animi aspernatur labore placeat temporibus eaque numquam assumenda reiciendis eveniet officia delectus aperiam repellat",
-        subImageOne: "image/products/subimage1.jpg",
-        subImageTwo: "image/products/subimage2.jpg"
-    }
-];
+// ----------------------------------------------------------------------------------------------------------------------------------
+// index.html
+const featuredContainer = document.querySelector('.featured-container');
 
-
-const clothSize = {
-    xs: "XS",
-    s: "S",
-    m: "M",
-    l: "L",
-    xl: "XL",
-    xxl: "XXL"
-}
-
-// shop.html
-const shopContainer = document.querySelector('#shop-container');
-
-const html = data.map(obj => {
+const item = data.map(obj => {
     return `
   </div>
     <div class="product">
@@ -183,15 +122,9 @@ const html = data.map(obj => {
     `;
 }).join('');
 
-shopContainer.insertAdjacentHTML('beforeend', html);
+featuredContainer.insertAdjacentHTML('beforeend', item);
 
-// change color of heart icon
-const heartIcon = document.querySelector(".heart");
-function changeColor() {
-    heartIcon.style.backgroundColor = "rgb(255,240,245,0.8)";
-    heartIcon.style.color = "#FFABCE";
-}
-
+// ----------------------------------------------------------------------------------------------------------------------------------
 // cart.html
 function showCart() {
     const products = [];
@@ -245,6 +178,7 @@ function calSubtotal(price, num) {
     return subtotal;
 }
 
+// ----------------------------------------------------------------------------------------------------------------------------------
 // product.html
 function itemDetail() {
     const singleProduct = document.querySelector('#single-product');

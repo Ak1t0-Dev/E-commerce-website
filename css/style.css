@@ -231,9 +231,9 @@ footer .col {
     height: 40px;
     line-height: 40px;
     border-radius: 50px;
-    background-color: #e8f6ea;
+    background-color: rgb(243, 246, 244);
     font-weight: 500px;
-    color: #088178;
+    color: #808080;
     border: 1px solid #cce7d0;
     position: absolute;
     bottom: 15px;
@@ -551,4 +551,69 @@ footer .col {
     min-height: 3em;
     border: 1px solid #cce7d0;
     border-radius: 5px;
+}
+
+/* like.html */
+#like-container {
+    display: flex;
+    overflow: auto;
+    white-space: nowrap;
+    height: 60vh;
+}
+
+#like-container table {
+    width: 100%;
+    min-width: 700px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    margin-top: 1em;
+}
+
+#like-container table img {
+    width: 70px;
+}
+
+#like-container table td:nth-child(1) {
+    width: 30px;
+    text-align: center;
+}
+
+#like-container table td:nth-child(2) {
+    width: 100px;
+    text-align: center;
+}
+
+#like-container table td:nth-child(3) {
+    width: 150px;
+    text-align: center;
+}
+
+#like-container table td:nth-child(4) {
+    width: 100px;
+    text-align: center;
+}
+
+#like-container table thead {
+    border: 1px solid #e2e9e1;
+    border-left: none;
+    border-right: none;
+}
+
+#like-container table thead tr {
+    height: 20vh;
+}
+
+#like-container table thead th {
+    font-weight: 700;
+    font-size: 13px;
+    padding: 18px 0;
+}
+
+
+#like-container table tbody tr td {
+    padding-top: 15px;
+}
+
+#like-container table tbody td {
+    font-size: 13px;
 }
