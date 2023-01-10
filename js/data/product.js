@@ -60,3 +60,12 @@ export const data = [
         subImageTwo: "image/products/subimage2.jpg"
     }
 ];
+
+export const clothSize = {
+    xs: "XS",
+    s: "S",
+    m: "M",
+    l: "L",
+    xl: "XL",
+    xxl: "XXL"
+}
