@@ -1,6 +1,11 @@
 import { data } from "../data/product.js"
 
-// get "like information" from session storage
+// ----------------------------------------------------------------------------------------------------------------------------------
+// like.html
+// ----------------------------------------------------------------------------------------------------------------------------------
+
+// when page is reload, the function is called
+// get "product like" from session storage
 function showLike() {
   const items = [];
   for (let i = 0; i < sessionStorage.length; i++) {
@@ -18,6 +23,10 @@ function showLike() {
 
   createLikeTable(items);
 
+  document.querySelectorAll('.x-mark').forEach(element => {
+    element.addEventListener('click', deleteItem);
+})
+
 }
 
 window.addEventListener('load', showLike);
@@ -29,7 +38,7 @@ function createLikeTable(items) {
     const obj = data.find((value) => value.id === item);
     return `
         <tr>
-          <td><i class="fa-solid fa-circle-xmark"></i></td>
+          <td><i id=heart${obj.id} class="fa-solid fa-circle-xmark x-mark"></i></td>
           <td>${obj.name}</td>
           <td><img src="${obj.image}"></td>
           <td><span>$</span>${obj.price}</td>
@@ -38,4 +47,10 @@ function createLikeTable(items) {
   }).join('');
 
   likeContainer.insertAdjacentHTML('beforeend', like);
+}
+
+// delete item from sessionStorage and reload the page
+function deleteItem() {
+  sessionStorage.removeItem(this.id);
+  window.location.reload(false);
 }

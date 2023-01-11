@@ -1,6 +1,10 @@
 import { data } from "../data/product.js"
 
-// add product information in session
+// ----------------------------------------------------------------------------------------------------------------------------------
+// product.html
+// ----------------------------------------------------------------------------------------------------------------------------------
+
+// add product information in sessionStorage
 function addCart() {
     const select = document.querySelector('[name="size"]');
     if (select.value === "") {
@@ -15,12 +19,14 @@ function addCart() {
     }
 }
 
+// create object and add to session storage
 function createObj(id, value) {
     const obj = {};
     obj[value] = 1;
     sessionStorage.setItem(id, JSON.stringify(obj));
 }
 
+// add a property to the object and add to session storage
 function addObj(id, value) {
     let obj = sessionStorage.getItem(id);
     obj = JSON.parse(obj);
